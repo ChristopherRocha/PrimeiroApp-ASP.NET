@@ -1,0 +1,29 @@
+﻿@model ProjetoGerenciarTarefas.Models.ParaFazer;
+
+<h1>@ViewData["Title"]</h1>
+
+
+<form method="POST">
+
+    @if(Model != null)
+    {
+        <input type="hidden" asp-for="DataCriacao" value="@Model.GetDate()" />
+    }
+    
+
+    <div class="mb-3">
+        <label asp-for="Title">Título</label>
+        <input asp-for="Title" class="form-control"/>
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="DataLimite" >Data de entrega</label>
+        <input asp-for="DataLimite" type="date" class="form-control" />
+        <span asp-validation-for="DataLimite" class="text-danger"></span>
+    </div>
+    
+    <button class="btn btn-primary" type="submit">Salvar</button>
+
+
+</form>

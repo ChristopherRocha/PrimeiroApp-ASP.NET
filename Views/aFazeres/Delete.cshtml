@@ -1,0 +1,12 @@
+﻿@model ProjetoGerenciarTarefas.Models.ParaFazer;
+
+
+<h1>@ViewData["Title"]</h1>
+
+<p>Tem Certeza que deseja excluir a tarefa <strong>@Model.Title</strong>?</p>
+ 
+
+<form method="POST">
+    <button class="btn btn-danger" type="submit">Excluir</button>
+    <a asp-controller="aFazeres" asp-action="Index" class="btn btn-primary">Cancelar</a>
+</form>
